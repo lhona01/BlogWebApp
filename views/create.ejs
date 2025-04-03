@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+<main class="create">
+    <% if (locals.message) { %>
+        <script>
+        alert('<%= locals.message %>');
+        </script>
+    <% } %>
+    <form action="/create" method="post">
+        <div class="input-group title">
+            <span class="input-group-text">Title</span>
+            <label for="title"></label>
+            <textarea class="form-control" name="title" aria-label="With textarea"></textarea>
+        </div>
+
+        <div class="input-group content">
+            <span class="input-group-text">Content</span>
+            <label for="content"></label>
+            <textarea class="form-control" name="content" aria-label="With textarea"></textarea>
+        </div>
+
+        <div class="submit">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</main>
+
+<%- include("partials/footer.ejs") %>

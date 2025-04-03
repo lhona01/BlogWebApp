@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+    <main>
+        <div class="home">
+            <div class="display-blog formatted-text">
+                <% if (locals.blog) { %>
+                    <h2><%= locals.blog.title %> </h2>
+                    <pre><%= locals.blog.content %></pre>
+                <% } %>
+            </div>
+    
+            <div class="blog-title">
+                <ul>
+                    <% for (let i = 0; i < locals.blogs.length; i++) { %>
+                        <li>
+                            <a href="/home?id=<%= locals.blogs[i].id %>">
+                                <%= locals.blogs[i].title %>
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </main>
+<%- include("partials/footer.ejs") %>
